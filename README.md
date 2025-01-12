@@ -112,7 +112,7 @@ In addition to **In-Run data Shapley** (which measures the contribution of train
 
 Below is a simplified illustration of how one might visualize these **classical Shapley** explanations on a digit:
 
-![[image_2025-01-04_23-18-38.png]]
+![image_2025-01-04_23-18-38.png](https://github.com/parthshr370/Data-Shapley-in-One-Training-Run-Code/blob/main/image_2025-01-04_23-18-38.png)
 
 
 1. **Bright/Red Regions** → strongly support the prediction of “7.”
