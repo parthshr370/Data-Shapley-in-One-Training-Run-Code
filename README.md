@@ -10,12 +10,11 @@ This repository demonstrates **In-Run Data Shapley** computation for a single va
 
 ## Key Ideas
 
-1. **Combined Loss**: We create a “combined batch” of [train_batch,val_sample][ \text{train\_batch}, \text{val\_sample} ] so we can compute both training and validation gradients in one forward pass.
+1. **Combined Loss**: We create a “combined batch” of [train_batch,val_sample] $[\text{train\_batch}, \text{val\_sample}]$ so we can compute both training and validation gradients in one forward pass.
 2. **Shapley Approximation**:
-    - We do a **dot product** $⟨∇ℓtrain_i,∇ℓval⟩\langle \nabla \ell_{\text{train\_i}}, \nabla \ell_{\text{val}} \rangle$ to assess how a single training sample’s gradient aligns with (or opposes) the validation sample’s gradient.
+    - We do a **dot product** $\langle \nabla \ell_{\text{train\_i}}, \nabla \ell_{\text{val}} \rangle$ to assess how a single training sample’s gradient aligns with (or opposes) the validation sample’s gradient.
     - We accumulate these scores in a `data_shapley_scores` tensor (one entry per training sample).
 3. **Naive Implementation**: The code does multiple backward passes (one per sample in the batch) to demonstrate the concept. A true “ghost dot product” approach can do it in a single pass using forward/backward hooks, but that’s more advanced.
-
 ## How It Works
 
 1. **Load Data**: The code loads MNIST with 60,000 training images and some validation/test set.
